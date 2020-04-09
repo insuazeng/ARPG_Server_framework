@@ -1,0 +1,44 @@
+target := \
+../../CommonFiles/BaseObject.cpp\
+../../CommonFiles/DBConfigLoader.cpp\
+../../CommonFiles/EventableObject.cpp\
+../../CommonFiles/EventMgr.cpp\
+../../CommonFiles/SceneMapMgr.cpp\
+../../CommonFiles/SceneMapPath.cpp\
+../../CommonFiles/ServerCommunication.cpp\
+../../CommonFiles/SynchronizedObject.cpp\
+../../CommonFiles/SceneMapExport.cpp\
+../../CommonFiles/PbDataLoader.cpp \
+../stdafx.cpp \
+../GameSession.cpp \
+../GateCommHandler.cpp \
+../GateCommMsgHandler.cpp \
+../InstanceMgr.cpp \
+../MapCell.cpp \
+../MapMgr.cpp \
+../MapSpawn.cpp \
+../Monster.cpp \
+../MonsterAI.cpp \
+../MonsterExport.cpp \
+../Object.cpp \
+../ObjectExport.cpp \
+../ObjectMgr.cpp \
+../ObjectPoolMgr.cpp \
+../Park.cpp \
+../Partner.cpp \
+../PartnerExport.cpp \
+../Player.cpp \
+../PlayerAOI.cpp \
+../PlayerDB.cpp \
+../PlayerExport.cpp \
+../PlayerPartner.cpp \
+../PlayerSync.cpp \
+../SceneCommServer.cpp \
+../SceneLuaTimer.cpp \
+../SceneScript.cpp \
+../SceneServer.cpp \
+../SkillHelp.cpp \
+../StatisticsSystem.cpp \
+../UpdateThread.cpp \
+../UserProto002Handler.cpp \
+../WorldRunnable.cpp 

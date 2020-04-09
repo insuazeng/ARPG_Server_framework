@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C2E92684-245D-4BC6-AA00-10F5C90BA53C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SceneServer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>E:\Arpg2016_output\$(Platform)\</OutDir>
+    <IntDir>E:\Arpg2016_output\obj\$(ProjectName)\$(Platform)_$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\CommonFiles;..\CommonLib\include;..\CommonLib\include\3rd</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <OmitFramePointers>false</OmitFramePointers>
+      <PreprocessorDefinitions>_WIN64;_DEBUG;_CONSOLE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName)d.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\CommonLib\lib\debug_x64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Advapi32.lib;winmm.lib;ws2_32.lib;mswsock.lib;dbghelp.lib;libmysql.lib;vld.lib;zlibstat.lib;commonlibd_x64.lib;libpbcd_x64.lib;libcjsond_2_1_0_x64.lib;libluabsond_x64.lib;libjsoncppd_1_7_4_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <LinkStatus>true</LinkStatus>
+    </Link>
+    <PostBuildEvent>
+      <Command>rd /S /q E:\Arpg2016_output\x64\SceneScript\
+rd /S /q E:\Arpg2016_output\x64\LuaCommon\
+xcopy /S /y ..\LuaCommon\* E:\Arpg2016_output\x64\LuaCommon\
+xcopy /S /y SceneScript\* E:\Arpg2016_output\x64\SceneScript\</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CommonFiles\BaseObject.h" />
+    <ClInclude Include="..\CommonFiles\DBConfigLoader.h" />
+    <ClInclude Include="..\CommonFiles\EventableObject.h" />
+    <ClInclude Include="..\CommonFiles\EventMgr.h" />
+    <ClInclude Include="..\CommonFiles\GameCommonDefine.h" />
+    <ClInclude Include="..\CommonFiles\MapInfo.h" />
+    <ClInclude Include="..\CommonFiles\PbDataLoader.h" />
+    <ClInclude Include="..\CommonFiles\PlayerCommonDef.h" />
+    <ClInclude Include="..\CommonFiles\SceneMapMgr.h" />
+    <ClInclude Include="..\CommonFiles\ServerCommonDef.h" />
+    <ClInclude Include="..\CommonFiles\SynchronizedObject.h" />
+    <ClInclude Include="..\CommonFiles\UpdateMask.h" />
+    <ClInclude Include="CellHandler.h" />
+    <ClInclude Include="EventDef.h" />
+    <ClInclude Include="GameSession.h" />
+    <ClInclude Include="GateCommHandler.h" />
+    <ClInclude Include="MapCell.h" />
+    <ClInclude Include="MapMgr.h" />
+    <ClInclude Include="MapObjectStorage.h" />
+    <ClInclude Include="MapSpawn.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="MonsterDef.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjectMgr.h" />
+    <ClInclude Include="ObjectPoolMgr.h" />
+    <ClInclude Include="Park.h" />
+    <ClInclude Include="Partner.h" />
+    <ClInclude Include="PartnerDef.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="SceneCommServer.h" />
+    <ClInclude Include="SceneLuaTimer.h" />
+    <ClInclude Include="SceneScript.h" />
+    <ClInclude Include="SkillHelp.h" />
+    <ClInclude Include="StatisticsSystem.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="UpdateThread.h" />
+    <ClInclude Include="InstanceMgr.h" />
+    <ClInclude Include="WorldRunnable.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CommonFiles\BaseObject.cpp" />
+    <ClCompile Include="..\CommonFiles\DBConfigLoader.cpp" />
+    <ClCompile Include="..\CommonFiles\EventableObject.cpp" />
+    <ClCompile Include="..\CommonFiles\EventMgr.cpp" />
+    <ClCompile Include="..\CommonFiles\PbDataLoader.cpp" />
+    <ClCompile Include="..\CommonFiles\SceneMapExport.cpp" />
+    <ClCompile Include="..\CommonFiles\SceneMapMgr.cpp" />
+    <ClCompile Include="..\CommonFiles\SceneMapPath.cpp" />
+    <ClCompile Include="..\CommonFiles\ServerCommunication.cpp" />
+    <ClCompile Include="..\CommonFiles\SynchronizedObject.cpp" />
+    <ClCompile Include="GameSession.cpp" />
+    <ClCompile Include="GateCommHandler.cpp" />
+    <ClCompile Include="GateCommMsgHandler.cpp" />
+    <ClCompile Include="MapCell.cpp" />
+    <ClCompile Include="MapMgr.cpp" />
+    <ClCompile Include="MapSpawn.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MonsterAI.cpp" />
+    <ClCompile Include="MonsterExport.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ObjectExport.cpp" />
+    <ClCompile Include="ObjectMgr.cpp" />
+    <ClCompile Include="ObjectPoolMgr.cpp" />
+    <ClCompile Include="Park.cpp" />
+    <ClCompile Include="ParkExport.cpp" />
+    <ClCompile Include="Partner.cpp" />
+    <ClCompile Include="PartnerExport.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerAOI.cpp" />
+    <ClCompile Include="PlayerExport.cpp" />
+    <ClCompile Include="PlayerPartner.cpp" />
+    <ClCompile Include="SceneCommServer.cpp" />
+    <ClCompile Include="SceneLuaTimer.cpp" />
+    <ClCompile Include="SceneScript.cpp" />
+    <ClCompile Include="SceneServer.cpp" />
+    <ClCompile Include="SessionExport.cpp" />
+    <ClCompile Include="SkillHelp.cpp" />
+    <ClCompile Include="StatisticsSystem.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="UpdateThread.cpp" />
+    <ClCompile Include="InstanceMgr.cpp" />
+    <ClCompile Include="UserProto002Handler.cpp" />
+    <ClCompile Include="WorldRunnable.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

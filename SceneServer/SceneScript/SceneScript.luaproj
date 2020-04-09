@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47461024-1071-4ef9-9ee6-8c65439fe9c4}</ProjectGuid>
+    <!--$guid1$-->
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>SceneScript</Name>
+    <RootNamespace>SceneScript</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="config\aura_proto_conf.lua" />
+    <Compile Include="config\monster_proto_conf.lua" />
+    <Compile Include="module\aura\buff_effect_handler.lua" />
+    <Compile Include="module\aura\debuff_effect_handler.lua" />
+    <Compile Include="module\aura\lua_aura.lua" />
+    <Compile Include="module\common\scene_fight_object.lua" />
+    <Compile Include="module\common\scene_defines.lua" />
+    <Compile Include="module\gmcommand\gm_packet_handler.lua" />
+    <Compile Include="module\monster\ai\base_ai.lua" />
+    <Compile Include="module\monster\lua_monster.lua" />
+    <Compile Include="module\monster\monster_manager.lua" />
+    <Compile Include="module\partner\lua_partner.lua" />
+    <Compile Include="module\partner\partner_fields.lua" />
+    <Compile Include="module\partner\partner_packet_handler.lua" />
+    <Compile Include="module\player\lua_player.lua" />
+    <Compile Include="module\player\player_combat.lua" />
+    <Compile Include="module\player\player_fields.lua" />
+    <Compile Include="module\player\player_manager.lua" />
+    <Compile Include="module\player\player_packet_handler.lua" />
+    <Compile Include="module\player\player_partner.lua" />
+    <Compile Include="module\player\player_props.lua" />
+    <Compile Include="module\player\player_sync.lua" />
+    <Compile Include="module\skill\skill_def.lua" />
+    <Compile Include="module\skill\skill_effect_handler.lua" />
+    <Compile Include="module\skill\skill_find_target_handler.lua" />
+    <Compile Include="module\skill\skill_packet_handler.lua" />
+    <Compile Include="module\skill\skill_system.lua" />
+    <Compile Include="module\skill\skill_target_handler.lua" />
+    <Compile Include="network\serverpacket_handle_dispatcher.lua" />
+    <Compile Include="network\server_packet_handler.lua" />
+    <Compile Include="network\worldpacket_handle_dispatcher.lua" />
+    <Compile Include="scene_main.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="module\" />
+    <Folder Include="module\common\" />
+    <Folder Include="module\monster\" />
+    <Folder Include="module\monster\ai\" />
+    <Folder Include="module\aura\" />
+    <Folder Include="module\gmcommand\" />
+    <Folder Include="module\partner\" />
+    <Folder Include="module\skill\" />
+    <Folder Include="module\player\" />
+    <Folder Include="network\" />
+    <Folder Include="config\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>
