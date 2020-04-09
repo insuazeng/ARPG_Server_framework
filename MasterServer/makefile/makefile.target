@@ -1,0 +1,30 @@
+target := \
+../../CommonFiles/BaseObject.cpp\
+../../CommonFiles/DBConfigLoader.cpp\
+../../CommonFiles/SceneMapMgr.cpp\
+../../CommonFiles/SceneMapPath.cpp\
+../../CommonFiles/ServerCommunication.cpp\
+../../CommonFiles/SynchronizedObject.cpp\
+../../CommonFiles/SceneMapExport.cpp\
+../../CommonFiles/PbDataLoader.cpp \
+../stdafx.cpp \
+../GateCommHandler.cpp \
+../GateCommMsgHandler.cpp \
+../GMCommandMgr.cpp \
+../MasterCommServer.cpp \
+../MasterLuaTimer.cpp \
+../MasterScript.cpp \
+../MasterServer.cpp \
+../MongoServerData.cpp \
+../ObjectMgr.cpp \
+../ObjectPoolMgr.cpp \
+../Park.cpp \
+../PlayerDB.cpp \
+../PlayerEntity.cpp \
+../PlayerInfo.cpp \
+../PlayerMgr.cpp \
+../PlayerServant.cpp \
+../PlayerSync.cpp \
+../UpdateThread.cpp \
+../UserProto001Handler.cpp \
+../WorldRunnable.cpp

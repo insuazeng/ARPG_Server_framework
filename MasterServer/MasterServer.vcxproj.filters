@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CommonFiles">
+      <UniqueIdentifier>{8d0cd1f6-1c41-4cfc-809b-dd4e36f4ef16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GateComm">
+      <UniqueIdentifier>{9f95cbd6-04b1-4757-8b4b-95f51c0250fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{e3d3c8eb-6972-4ae1-a80a-73e57a3aae3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Park">
+      <UniqueIdentifier>{25134d08-efba-4fc0-87d3-06e65b224be6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayerMgr">
+      <UniqueIdentifier>{c28fdba8-7c35-4108-970d-c225af819c66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{5e320948-7663-44f1-a4ab-237aa8892ff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\export">
+      <UniqueIdentifier>{9371b114-3a21-4228-996d-e67336df2cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonFiles\LuaExport">
+      <UniqueIdentifier>{73fc3a87-5251-45a7-a1b7-d6c02a704eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database">
+      <UniqueIdentifier>{ad643c13-8c97-41d4-92fe-08babf70ec37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\ServerCommunication.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="GateCommHandler.cpp">
+      <Filter>GateComm</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterCommServer.cpp">
+      <Filter>GateComm</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateThread.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldRunnable.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="Park.cpp">
+      <Filter>Park</Filter>
+    </ClCompile>
+    <ClCompile Include="GateCommMsgHandler.cpp">
+      <Filter>GateComm</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMgr.cpp">
+      <Filter>Park</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectPoolMgr.cpp">
+      <Filter>Park</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMgr.cpp">
+      <Filter>PlayerMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerServant.cpp">
+      <Filter>PlayerMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\DBConfigLoader.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\SynchronizedObject.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\BaseObject.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterScript.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\SceneMapMgr.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\SceneMapExport.cpp">
+      <Filter>CommonFiles\LuaExport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\SceneMapPath.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\PbDataLoader.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterLuaTimer.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="MongoServerData.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="ParkExport.cpp">
+      <Filter>Script\export</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMgrExport.cpp">
+      <Filter>Script\export</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerServantExport.cpp">
+      <Filter>Script\export</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\ServerCommonDef.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="GateCommHandler.h">
+      <Filter>GateComm</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterCommServer.h">
+      <Filter>GateComm</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateThread.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldRunnable.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Park.h">
+      <Filter>Park</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMgr.h">
+      <Filter>Park</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPoolMgr.h">
+      <Filter>Park</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMgr.h">
+      <Filter>PlayerMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerServant.h">
+      <Filter>PlayerMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\DBConfigLoader.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\PlayerCommonDef.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\SynchronizedObject.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\BaseObject.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterScript.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\SceneMapMgr.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\PbDataLoader.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterLuaTimer.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="MongoServerData.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
