@@ -1,0 +1,11 @@
+target := \
+../stdafx.cpp \
+../AccountCache.cpp \
+../DirectSocket.cpp \
+../DirectSocketMsgHandler.cpp \
+../InformationCore.cpp \
+../LoginServer.cpp \
+../LogonCommServer.cpp \
+../WorldRunnable.cpp \
+../../CommonFiles/DBConfigLoader.cpp \
+../../CommonFiles/PbDataLoader.cpp

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CommonFiles">
+      <UniqueIdentifier>{f985f1f1-e84f-4323-9348-191c86ecd919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{40ee0bdd-cc20-4898-aeab-ab672ddda0de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LoginComm">
+      <UniqueIdentifier>{b4816d07-26be-431c-b2d0-3ed5e70c8ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Account">
+      <UniqueIdentifier>{1ff6cea7-182a-40cd-8a70-fbf06d7f5158}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\ServerCommonDef.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldRunnable.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="InformationCore.h">
+      <Filter>LoginComm</Filter>
+    </ClInclude>
+    <ClInclude Include="LogonCommServer.h">
+      <Filter>LoginComm</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountCache.h">
+      <Filter>Account</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectSocket.h">
+      <Filter>Account</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\PbDataLoader.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\DBConfigLoader.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldRunnable.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="InformationCore.cpp">
+      <Filter>LoginComm</Filter>
+    </ClCompile>
+    <ClCompile Include="LogonCommServer.cpp">
+      <Filter>LoginComm</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountCache.cpp">
+      <Filter>Account</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSocket.cpp">
+      <Filter>Account</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectSocketMsgHandler.cpp">
+      <Filter>Account</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\PbDataLoader.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\DBConfigLoader.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
