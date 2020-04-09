@@ -1,0 +1,56 @@
+// 坐骑进阶系统的相关协议
+
+// 请求获取当前坐骑进阶数据
+message UserProto007001
+{
+	
+}
+
+// 当前坐骑进阶数据
+message UserProto007002
+{
+	required uint32 curAdvancedLevel	= 1;	// 当前进阶等级
+	optional uint32 curLuckyValue		= 2;	// 当前进阶幸运值
+	optional uint32 curIllusionLevel	= 3;	// 当前幻化的坐骑等级
+	optional bool illusionHideFlag		= 4;	// 隐藏标记
+	optional uint32 curTempAckValue		= 5;	// 当前等级临时攻击力加成
+}
+
+// 请求进行一次坐骑进阶
+message UserProto007003
+{
+	required bool autoBuyItem			= 1;	// 是否自动购买材料
+}
+
+// 坐骑进阶结果
+message UserProto007004
+{
+	required uint32 curAdvancedLevel	= 1;	// 进阶后的当前等级
+	optional uint32 curLuckyValue		= 2;	// 进阶后的幸运值
+	optional uint32 curTempAckValue		= 3;	// 进阶后的临时攻击力加成
+}
+
+// 请求进行坐骑幻化
+message UserProto007005
+{
+	required uint32 wantIllusionLevel	= 1;	// 试图幻化的坐骑等级
+}
+
+// 坐骑幻化结果
+message UserProto007006
+{
+	required uint32 curIllusionLevel	= 1;	// 幻化结果
+}
+
+// 请求进行坐骑形象隐藏
+message UserProto007007
+{
+	required bool hideFlag 	= 1;			// 隐藏标记(true隐藏,false不隐藏)
+}
+
+// 坐骑形象隐藏结果
+message UserProto007008
+{
+	required bool hideResult = 1;			// 隐藏结果(true隐藏,false不隐藏)
+}
+

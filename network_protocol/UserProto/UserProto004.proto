@@ -1,0 +1,16 @@
+// 伙伴系统相关协议
+
+// 请求放出/收回伙伴
+message UserProto004001		
+{
+	required uint32 opCode = 1;				// 操作码(1:放出伙伴,2:回收伙伴)
+	optional uint32 partnerProtoID = 2;			// 伙伴原型id
+}
+
+// 请求进行伙伴avatar更换
+message UserProto004003
+{
+	required uint64 partnerGuid = 1;			// 伙伴guid
+	optional uint32 propIndex = 2;				// 属性索引
+	optional uint32 propValue = 3;				// 属性值
+}

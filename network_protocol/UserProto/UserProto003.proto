@@ -1,0 +1,104 @@
+import "UserProtoPublic.proto";
+
+// 战斗、释放技能、复活相关协议
+
+// 请求释放技能
+message UserProto003001		
+{
+	required uint32 skillID = 1;			// 技能id
+	optional uint64 mainTargetGuid = 2;		// 主目标guid
+	repeated uint64 otherTargetGuids = 3;	// 其他目标guid
+	optional tagPositionData targetPos = 4;	// 目标点坐标
+}
+
+// 技能释放结果(返回给施法者)
+message UserProto003002
+{
+
+}
+
+// 技能释放通知(广播到施法者周边玩家)
+message UserProto003004
+{
+	required uint64 casterGuid					= 1;		// 施法者guid
+	optional uint32 castSkillID 				= 2;		// 技能id
+	optional tagAssaultObjectInfo assaultData 	= 3;		// 冲锋数据
+}
+
+// 冲锋对象数据
+message tagAssaultObjectInfo
+{
+	required uint64 assaultObjectGuid 	= 1; // 冲锋者guid
+	optional float startPosX			= 2; // 冲锋起点x
+	optional float startPosY 			= 3; // 冲锋起点y
+	optional float endPosX 				= 4; // 冲锋终点x
+	optional float endPosY 				= 5; // 冲锋终点y
+	optional float endPosHeight			= 6; // 冲锋终点高度值
+}
+
+// 技能伤害结果
+message tagProtoSkillCastResult
+{
+	required uint64 targetGuid = 1;			// 受击者guid
+	optional uint32 castResult = 2;			// 释放结果(高16为释放结果：1/闪避,2/普通命中,3/暴击；低16位为伤害结果：1/普通受伤,2/死亡)
+	optional uint32 damageValue = 3;		// 受伤值
+}
+
+// 技能伤害结算通知
+message UserProto003006
+{
+	required uint64 casterGuid = 1;						// 施法者guid
+	repeated tagProtoSkillCastResult castResults = 2;	// 释放结果列表(同一技能可能对多个目标造成伤害,因此采用repeated)
+}
+
+// 请求复活
+message UserProto003007
+{
+	required uint32 reliveType = 1;				// 请求复活类型(1:普通复活)
+}
+
+// 复活通知
+message UserProto003008
+{
+	optional uint64 relivePlayerGuid = 1;		// 复活角色的guid
+	optional uint32 reliveHp = 2;				// 复活后血量
+}
+
+// 请求获取角色技能数据
+message UserProto003009
+{
+}
+
+// 角色技能数据
+message UserProto003010
+{
+	
+}
+
+// 请求进行主动技能升级
+message UserProto003011
+{
+	required uint32 skillID = 1;
+	optional uint32 skillLevel = 2;
+}
+
+// 技能升级结果
+message UserProto003012
+{
+	optional uint32 skillID = 1;
+	optional uint32 skillLevel = 2; 
+}
+
+// 请求进行主动技能天赋激活
+message UserProto003013
+{
+	required uint32 skillID = 1;
+	optional uint32 geniusIndex = 2;			// 天赋索引
+}
+
+// 主动技能天赋激活结果
+message UserProto003014
+{
+	optional uint32 skillID = 1;
+	optional uint32 geniusIndex = 2;			// 天赋索引
+}

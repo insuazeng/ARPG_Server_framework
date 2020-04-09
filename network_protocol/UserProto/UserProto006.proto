@@ -1,0 +1,109 @@
+import "UserProtoPublic.proto";
+
+// 背包、装备、物品系统协议
+// 请求获取本角色物品列表
+message UserProto006001
+{
+	required uint32 packIndex = 1;		// 背包索引(1:装备背包,2:普通背包,3:仓库背包)
+}
+
+// 返回角色物品列表数据
+message UserProto006002
+{
+	required uint32 packIndex = 1;				// 背包索引(1:装备背包,2:普通背包,3:仓库背包)
+	repeated tagSingleItemData packItems = 2;	// 物品列表
+}
+
+// 请求进行物品交换
+message UserProto006003
+{
+	required uint64 srcItemGuid		= 1;	// 源物品guid
+	optional uint32 destPackIndex	= 2;	// 目标背包
+}
+
+// 请求进行物品交换结果
+message UserProto006004
+{
+	required uint64 srcItemGuid		= 1;	// 源物品guid
+	optional uint32 destPackIndex	= 2;	// 目标背包
+}
+
+// 请求使用物品
+message UserProto006005
+{
+	required uint64 itemGuid		= 1;		// 物品guid
+	optional uint32 useCount		= 2;		// 使用数量
+}
+
+// 使用物品结果
+message UserProto006006
+{
+	required uint64 itemGuid		= 1;		// 要使用的物品guid
+	optional uint32 useCount		= 2;		// 使用数量
+}
+
+// 请求出售物品
+message UserProto006007
+{
+	required uint64 itemGuid		= 1;		// 要出售的物品guid
+	optional uint32 sellCount		= 2;		// 出售数量
+}
+
+// 出售物品结果
+message UserProto006008
+{
+	required uint64 itemGuid 		= 1;		// 出售的物品guid
+	optional uint32 sellCount		= 2;		// 出售数量
+	optional uint32 incomeCoins		= 3;		// 获取的铜币
+}
+
+// 请求熔炼物品
+message UserProto006009
+{
+	
+}
+
+// 物品熔炼结果
+message UserProto006010
+{
+	
+}
+
+// 通知物品过期
+message UserProto006011
+{
+	required uint64 itemGuid 	= 1;		// 过期物品guid
+}
+
+// 获取单个物品数据(物品数量更新/绑定状态改变/背包索引改变/物品数据变更等 都通过本协议下发)
+message UserProto006014
+{
+	required tagSingleItemData itemData = 1;	// 
+}
+
+// 移除某个物品
+message UserProto006016
+{
+	required uint64 itemGuid 	= 1;		// 要移除的物品guid
+}
+
+// 请求背包整理
+message UserProto006017
+{
+	required uint32 packIndex 		= 1;	// 背包索引(2:普通背包,3:仓库背包)
+}
+
+// 背包整理结果
+message UserProto006018
+{
+	required uint32 packIndex 					= 1;	// 背包索引(2:普通背包,3:仓库背包)
+	repeated tagMergedItemData changedItemDatas = 2;	// 发生数量改变的物品列表
+	repeated uint64 deletedItemGuids			= 3;	// 要删掉的物品guid
+}
+
+// 物品合并的数据
+message tagMergedItemData
+{
+	required uint64 itemGuid 		= 1;	// 物品guid
+	optional uint32 newItemCount 	= 2;	// 物品新数量
+}

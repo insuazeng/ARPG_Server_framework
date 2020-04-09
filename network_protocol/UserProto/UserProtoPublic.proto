@@ -1,0 +1,87 @@
+// 单个对象移动数据
+message tagProtoSingleObjectMovmentData
+{
+	required uint64 objGuid = 1;		// 对象guid
+	optional float srcPosX = 2;			// 起点坐标x
+	optional float srcPosY = 3;			// 起点坐标y
+	optional float srcHeight = 4;		// 起点高度
+	optional float destPosX = 5;		// 目标坐标x
+	optional float destPosY = 6;		// 目标坐标y
+	optional float destHeight = 7;		// 目标高度
+	optional uint32 moveType = 8;		// 移动类型（0：普通移动）
+}
+
+// 单个属性改变数据
+message tagProtoObjectSinglePropData
+{
+	required uint32 propIndex = 1;		// 属性索引
+	required uint64 propValue = 2;		// 属性值
+}
+
+// 单个对象属性改变队列
+message tagProtoSingleObjectPropUpdate
+{
+	required uint64 objGuid = 1;							// 对象guid
+	repeated tagProtoObjectSinglePropData updateProps = 2;	// 属性改变队列
+}
+
+// 多个对象属性改变队列
+message tagProtoMultiObjectPropUpdates
+{
+	repeated tagProtoSingleObjectPropUpdate updateObjects = 1;	// 对象属性改变队列
+}
+
+// 单个对象创建数据
+message tagProtoSingleObjectCreationData
+{
+	required uint64 objectGuid = 1;							// 对象guid
+	optional uint32 objectType = 2;							// 对象类型(1:玩家,2:怪物)
+	optional tagProtoPlayerCreationData plrData = 3; 		// 玩家数据
+	optional tagProtoMonsterCreationData monsterData = 4;	// 怪物数据
+	optional tagProtoPartnerCreationData partnerData = 5;	// 伙伴数据
+	optional float curPosX = 6;								// 当前位置x
+	optional float curPosY = 7;								// 当前位置y
+	optional float curPosHeight = 8;						// 当前高度
+	optional uint32 curDirection = 9;						// 当前方向
+	optional bool isMoving = 10;							// 是否正在移动
+	optional float moveDestPosX = 11;						// 移动目标坐标x
+	optional float moveDestPosY = 12;						// 移动目标坐标y
+	optional float moveDestHeight = 13;						// 移动目标高度
+	optional uint32 moveType = 14;							// 移动类型（0：普通移动）
+	repeated tagProtoObjectSinglePropData propList = 15;	// 属性队列
+}
+
+// 单个玩家对象创建
+message tagProtoPlayerCreationData
+{
+	optional string plrName			= 1;	// 玩家名字
+}
+
+// 单个怪物对象创建
+message tagProtoMonsterCreationData
+{
+	optional string monsterName		= 1;	// 怪物名
+}
+
+// 单个伙伴对象创建
+message tagProtoPartnerCreationData
+{
+	optional uint32 partnerProtoID	= 1;	// 伙伴原型id
+}
+
+// 单个道具信息
+message tagSingleItemData
+{
+	required uint64 itemGuid		= 1;	// 物品guid(全局唯一)
+	optional uint32 itemProtoID		= 2;	// 物品原型id
+	optional uint32 packIndex		= 3;	// 所在背包索引(1:装备背包,2:普通背包,3:仓库背包)
+	optional uint32 count			= 4;	// 物品堆叠数量
+	optional bool bindFlag			= 5;	// 绑定标记
+}
+
+// 游戏位置坐标点数据
+message tagPositionData
+{
+	optional float posX = 1;		// x坐标
+	optional float posY = 2;		// y坐标
+}

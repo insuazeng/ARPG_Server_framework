@@ -1,0 +1,63 @@
+import "UserProtoPublic.proto";
+
+// 通知场景加载完成
+message UserProto002001
+{
+	
+}
+
+// 加载完成后推送角色自身数据
+message UserProto002002
+{
+	optional tagProtoSingleObjectCreationData playerCreationData = 1;		// 玩家创角数据
+}
+
+// 请求移动操作(开始移动,停止移动)
+message UserProto002003
+{
+	required float srcPosX 	= 1;	// 起点坐标x
+	optional float srcPosY 	= 2;	// 起点坐标y
+	optional float destPosX = 3;	// 目标坐标x
+	optional float destPosY = 4;	// 目标坐标y
+}
+
+// 对象移动数据同步
+message UserProto002004
+{
+	repeated tagProtoSingleObjectMovmentData objMovmentList = 1;	// 对象移动队列(开始移动与停止移动都在此包中)
+}
+
+// 请求切换场景
+message UserProto002005
+{
+	required uint32 destSceneID		= 1;		// 目标场景id
+	optional float destPosX			= 2;		// 目标场景坐标x
+	optional float destPosY			= 3;		// 目标场景坐标y
+}
+
+// 场景切换结果
+message UserProto002006
+{
+	optional uint32 descSceneID		= 1;		// 目标场景id
+	optional float destPosX			= 2;		// 目标场景坐标x
+	optional float destPosY			= 3;		// 目标场景坐标y
+	optional float destHeight 		= 4;		// 目标场景坐标高度
+}
+
+// 对象创建通知
+message UserProto002008
+{
+	repeated tagProtoSingleObjectCreationData createObjectList = 1;	// 创建对象列表
+}
+
+// 对象移除通知
+message UserProto002010
+{
+	repeated uint64 removeObjectGuids = 1;	// 需要被移除的对象guid	
+}
+
+// 对象属性改变通知
+message UserProto002012
+{
+	repeated tagProtoSingleObjectPropUpdate updateObjects = 1;	// 对象属性改变队列
+}

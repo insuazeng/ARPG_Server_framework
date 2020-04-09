@@ -1,0 +1,181 @@
+import "UserProtoPublic.proto";
+
+// 账号登陆、创角、选角进游戏相关协议
+
+message UserProto001001			// 登陆服验证请求
+{
+	required string accountName = 1;       // 玩家帐号名
+}
+
+message UserProto001002			// 登陆服验证结果
+{
+	optional string gateServerIP = 1;       // 网关IP
+    optional int32 gateServerPort = 2;      // 网关端口
+    optional string gateServerAuthKey = 3;	// 网关登陆验证key
+}
+
+message UserProto001003			// 网关登陆请求
+{
+	required uint32 loginType = 1;			// 登陆方式（暂定直接发1）
+	optional string accountName = 2;		// 玩家账号名
+	optional string gateServerAuthKey = 3;	// 从登陆服获取到的key
+	optional string clientVersion = 4;		// 客户端版本号
+	optional string agentName = 5;			// 运营代理名
+	optional string netType = 6;      		// 网络类型；0:WIFI 1:3G 2:2G 3:其他
+    optional string sysVersion = 7;       	// 手机操作系统
+    optional string sysModel = 8;       	// 手机机型
+    optional string phoneMac = 9;       	// 手机mac地址
+}
+
+message UserProto001004			// 网关登陆结果
+{
+	optional string reloginKey = 1;			// 断线重连接令牌数据（验证成功后会发送）
+}
+
+message tagProtoRoleInfo		// 角色列表
+{
+	required uint64 roleGuid = 1;		// 角色guid
+	optional string roleName = 2;		// 角色名
+	optional uint32 career = 3;			// 职业
+	optional uint32 level = 4;			// 等级
+	optional uint32 banExpireTime = 5;	// 角色封禁到期时间(如果该值不等于0，意味着该角色被禁止登陆)
+}
+
+message UserProto001006			// 角色列表
+{
+	repeated tagProtoRoleInfo roleList = 1;	// 角色列表数据
+}
+
+message UserProto001007			// 请求创建角色
+{
+	required string roleName = 1;			// 试图创建的角色名
+	optional uint32 career = 2;				// 职业(1:战士,2:刺客)
+}
+
+message UserProto001008			// 创建角色结果
+{
+	required uint64 roleGuid = 1;		// 角色guid
+	optional string roleName = 2;		// 角色名
+	optional uint32 career = 3;			// 职业
+	optional uint32 level = 4;			// 等级
+}
+
+message UserProto001009			// 请求选角进入游戏
+{
+	required uint64 chooseRoleGuid = 1;		// 试图进入游戏的玩家guid
+}
+
+message UserProto001010			// 进入游戏结果
+{
+	optional uint64 roleGuid = 1;			// 玩家guid
+	optional string roleName = 2;			// 玩家名
+	optional uint32 career = 3;				// 职业
+	optional uint32 level = 4;				// 当前等级
+	optional uint32 curExp = 5;				// 当前经验
+	optional uint32 curHP = 6;				// 当前血量
+	optional uint32 maxHp = 7;				// 最大血量
+	optional uint32 mapID = 8;				// 当前所在场景id
+	optional float curPosX = 9;			// 当前坐标x
+	optional float curPosY = 10;			// 当前坐标y
+	optional float curPosHeight = 11;		// 当前高度
+}
+
+message UserProto001011			// 心跳包(客户端->服务端)
+{
+	required uint64 pingSendTime = 1;		// ping包发出的时间(时间单位：毫秒,"1970-1-1 00:00:00"到现在的值)
+}
+
+message UserProto001012			// 心跳包(服务端->客户端)
+{
+	required uint64 pingSendTime = 1;		// 客户端ping包发出的时间(时间单位：毫秒,"1970-1-1 00:00:00"到现在的值)
+	optional uint64 pingRecvTime = 2;		// 服务端收到客户端此次ping包的时间(时间单位：毫秒,"1970-1-1 00:00:00"到现在的值)
+}
+
+// 文本通知(服务端->客户端)
+message UserProto001014	
+{
+	required string notice = 1;			// 服务端向客户端发出的通知内容
+}
+
+// 请求执行gm命令
+message UserProto001015			
+{
+	required string commandLine = 1;	// 整条gm命令(含命令名+参数)
+}
+
+// 请求更换avatar
+message UserProto001017
+{
+	required uint32 avatarIndex = 1;	// 部位索引(与PlayerField中的字段索引值对应)
+	optional uint32 avatarValue = 2;	// 值
+}
+
+// 请求获取玩家角色面板数据
+message UserProto001019
+{
+	
+}
+
+// 玩家角色面板数据
+message UserProto001020
+{
+	required uint64 plrGuid			= 1;		// 玩家guid
+	optional uint64 guildGuid		= 2;		// 公会id
+	optional string guildName		= 3;		// 公会名
+	optional uint32 guildRank		= 4;		// 公会职位
+	optional uint64 coupleGuid		= 5;		// 伴侣guid
+	optional string coupleName		= 6;		// 伴侣姓名
+	optional uint64 coins			= 7;		// 铜币
+	optional uint32 bindCashs		= 8;		// 绑定元宝
+	optional uint32 cashs			= 9;		// 元宝
+	optional uint64 curExp			= 10;		// 当前经验
+	optional uint32 ack				= 11;		// 攻击值
+	optional uint32 def				= 12;		// 防御值
+	optional uint32 critical		= 13;		// 暴击值
+	optional uint32 tough			= 14;		// 韧性值
+	optional uint32 hit				= 15;		// 命中值
+	optional uint32 dodge			= 16;		// 闪避值
+	optional uint32 fightPower		= 17;		// 战斗力
+	optional uint32 vipLevel		= 18;		// vip等级
+	optional uint32 bestPrivilegeID = 19;		// 最佳特权id
+}
+
+// 请求获取玩家详细战斗属性数据
+message UserProto001021
+{
+	
+}
+
+// 玩家详细战斗属性数据
+message UserProto001022
+{
+	repeated uint32 propValues	= 1;		// 战斗属性(共60多个,详情见数值/基础/属性值设定)
+}
+
+// 更新玩家金钱信息
+message UserProto001024
+{
+	required uint64 coins		= 1;		// 铜币
+	optional uint32 bindCashs	= 2;		// 绑定元宝
+	optional uint32 cashs		= 3;		// 元宝
+}
+
+// 更新玩家经验数据
+message UserProto001026
+{
+	required uint64 curExp		= 1;		// 增加后角色经验值
+	optional uint32 expAddValue = 2;		// 经验值增加量
+}
+
+// 更新玩家战斗力数据
+message UserProto001028
+{
+	required uint32 fightPower		= 1;	// 最新战斗力
+}
+
+// 通知玩家升级
+message UserProto001030
+{
+	required uint32 oldLevel		= 1;	// 旧等级
+	optional uint32 newLevel		= 2;	// 新等级
+}
