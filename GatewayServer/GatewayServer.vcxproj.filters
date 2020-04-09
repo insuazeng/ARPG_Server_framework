@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="MasterComm">
+      <UniqueIdentifier>{145389d3-4538-494b-8214-b276fa9af0fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneComm">
+      <UniqueIdentifier>{6487f275-3e52-4efb-8f96-0673b3a00c32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LoginComm">
+      <UniqueIdentifier>{276d1ee0-e5a8-4984-861b-680e88a2d78f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server">
+      <UniqueIdentifier>{8d70ee14-2340-4e49-879e-be23e3d5e4d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonFiles">
+      <UniqueIdentifier>{84887410-bbe7-4384-885e-2bde5697cad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading">
+      <UniqueIdentifier>{478c942d-2db0-4eac-be63-0746002f4ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{8cb8a001-56c8-4ab2-944d-30004a75bdb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script\export">
+      <UniqueIdentifier>{47fd4ff4-faa6-457e-8d99-ad5ba312699c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GatewayServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LogonCommClient.cpp">
+      <Filter>LoginComm</Filter>
+    </ClCompile>
+    <ClCompile Include="LogonCommHandler.cpp">
+      <Filter>LoginComm</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSocket.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSocketMsgHandler.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneCommClient.cpp">
+      <Filter>SceneComm</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneCommHandler.cpp">
+      <Filter>SceneComm</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneCommMsgHandler.cpp">
+      <Filter>SceneComm</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterCommClient.cpp">
+      <Filter>MasterComm</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterCommMsgHandler.cpp">
+      <Filter>MasterComm</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateThread.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\ServerCommunication.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="GatewayScript.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="OpDispatcher.cpp">
+      <Filter>Script\export</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CommonFiles\PbDataLoader.cpp">
+      <Filter>CommonFiles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LogonCommClient.h">
+      <Filter>LoginComm</Filter>
+    </ClInclude>
+    <ClInclude Include="LogonCommHandler.h">
+      <Filter>LoginComm</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSocket.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneCommClient.h">
+      <Filter>SceneComm</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneCommHandler.h">
+      <Filter>SceneComm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\ServerCommonDef.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterCommClient.h">
+      <Filter>MasterComm</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateThread.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="GatewayScript.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="OpDispatcher.h">
+      <Filter>Script\export</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CommonFiles\PbDataLoader.h">
+      <Filter>CommonFiles</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

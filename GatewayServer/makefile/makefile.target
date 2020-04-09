@@ -1,0 +1,18 @@
+target := \
+../stdafx.cpp \
+../GameSocket.cpp \
+../GameSocketMsgHandler.cpp \
+../GatewayScript.cpp \
+../GatewayServer.cpp \
+../LogonCommClient.cpp \
+../LogonCommHandler.cpp \
+../MasterCommClient.cpp \
+../MasterCommMsgHandler.cpp \
+../OpDispatcher.cpp \
+../SceneCommClient.cpp \
+../SceneCommHandler.cpp \
+../SceneCommMsgHandler.cpp \
+../UpdateThread.cpp \
+../../CommonFiles/ServerCommunication.cpp \
+../../CommonFiles/PbDataLoader.cpp
+
